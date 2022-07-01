@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Registration</h1>
+    <form action="/handler" method="get">
+    <div class="main">
+        <div class="image">
+            <h2>Register To A New Account</h2>
+        </div>
+        <div class="username">
+            <input type="text"
+                   name="username"
+                   placeholder="Enter Your Name">
+        </div>
+        <p></p>
+        <div class="pass">
+            <input id="pass"
+                   type="password"
+                   name="pass"
+                   placeholder="Enter Password"
+                   required"">
+                   <p></p>
+            <input id="confirm"
+                   type="password"
+                   name="confirm"
+                   placeholder="Confirm Password"
+                   required
+                   onkeyup="confirming()">
+        </div>
+        <p></p>
+        <span id="alert"></span>
+        <div class="buttons">
+            <button id="create"
+                    class="submit_btn"
+                   >
+                Submit
+            </button>
+        </div>
+    </div></form>
+    <p><a href="./">Already Registered?</a></p>
+    
+    <script>
+        function confirming() {
+ 
+            var pass = document.getElementById('pass').value;
+            var confirm = document.getElementById('confirm').value;
+            if (pass != confirm) {
+                document.getElementById('alert').style.color = 'pink';
+                document.getElementById('alert').innerHTML
+                  = 'Password Does not  Match';
+               
+            } else {
+                document.getElementById('alert').style.color = 'blue';
+                document.getElementById('alert').innerHTML =
+                    'Correct Password';
+                
+            }
+        }
+ 
+       
+    </script>
+</body>
+</html>
+
